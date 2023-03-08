@@ -1,0 +1,11 @@
+---
+metadata:
+ name: "Check assining SA to VM created by us"
+ id: "CKV2_GOOGLE_5"
+ category: "NETWORKING"
+definition:
+ cond_type: "attribute"
+ resource_types: 
+ - "google_compute_instance_template"
+ attribute: "service_account.*.email"
+ operator: "exists"

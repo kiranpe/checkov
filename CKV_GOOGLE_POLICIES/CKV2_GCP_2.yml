@@ -1,0 +1,12 @@
+---
+metadata:
+  name: "Check that Instance Image is debian-10"
+  id: "CKV2_GOOGLE_2"
+  category: "NETWORKING"
+definition:
+  cond_type: "attribute"
+  resource_types:
+  - "google_compute_instance_template"
+  attribute: "disk.*.source_image"
+  operator: "contains"
+  value: "debian-10"

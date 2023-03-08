@@ -1,0 +1,11 @@
+---
+metadata:
+  name: "Check using init script to install webapp"
+  id: "CKV2_GOOGLE_3"
+  category: "NETWORKING"
+definition:
+  cond_type: attribute
+  resource_types:
+  - "google_compute_instance_template"
+  attribute: "metadata_startup_script"
+  operator: "exists"

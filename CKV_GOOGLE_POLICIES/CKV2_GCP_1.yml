@@ -1,0 +1,32 @@
+---
+metadata:
+   name: "Ensure that firewall is not open for all!"
+   id: "CKV2_GOOGLE_1"
+   category: "NETWORKING"
+definition:
+ not:
+ - or:
+   - cond_type: "attribute"
+     resource_types:
+     - "google_compute_firewall"
+     attribute: "source_ranges"
+     operator: "contains"
+     value: "0.0.0.0/0"
+   - cond_type: "attribute"
+     resource_type:
+     - "google_compute_firewall"
+     attribute: "source_ranges"
+     operator: "contains"
+     value: "0.0.0.0"
+   - cond_type: "attribute"
+     resource_types:
+     - "google_compute_firewall"
+     attribute: "source_ranges"
+     operator: "contains"
+     value: "::0"
+   - cond_type: "attribute"
+     resource_types:
+     - "google_compute_firewall"
+     attribute: "source_ranges"
+     operator: "contains"
+     value: "::/0"

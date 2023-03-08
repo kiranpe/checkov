@@ -1,0 +1,18 @@
+---
+metadata:
+  name: "check Own Service account creating or not"
+  id: "CKV2_GOOGLE_4"
+  category: "NETWORKING"
+definition:
+ and:
+ - cond_type: "filter"
+   attribute: "resource_type"
+   operator: "within"
+   value:
+   - "google_service_account"
+ - cond_type: "attribute"
+   attribute: "account_id"
+   resource_types:
+   - "google_service_account"
+   operator: "equals"
+   value: "spanner-vm-sa"
